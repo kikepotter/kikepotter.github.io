@@ -137,12 +137,10 @@ footer{background:var(--night);color:#cdd6f0;padding:36px 0;font-size:.9rem;text
 <p><a href="https://wa.me/34637464787" target="_blank" rel="noopener">WhatsApp: 637 464 787</a><br>Teléfono: <a href="tel:+34637464787">637 464 787</a></p></div>
 <form id="f" novalidate><div class="fg">
 <label>Nombre<input name="nombre" required autocomplete="name"><span class="err"></span></label>
-<label>Teléfono o email<input name="contacto" required autocomplete="email"><span class="err"></span></label>
 <label>Tipo de evento<select name="tipo" id="tipo" required><option value="">Elige…</option><option>Cumpleaños infantil</option><option>Comunión</option><option>Evento privado</option><option>Otra celebración</option></select><span class="err"></span></label>
 <label>Fecha prevista<input type="date" name="fecha"><span class="err"></span></label>
 <label>Localidad<input name="localidad" required autocomplete="address-level2"><span class="err"></span></label>
 <label>Nº aproximado de asistentes o niños<input type="number" min="1" name="num"><span class="err"></span></label></div>
-<label>Mensaje adicional<textarea rows="3" name="mensaje"></textarea></label>
 <button class="btn" type="submit">Consultar disponibilidad</button><div id="msg" role="status"></div>
 <small style="color:#55648a">Tus datos se usarán solo para responder a tu consulta. Falta añadir la política de privacidad.</small></form></div></section></main>
 
@@ -160,17 +158,8 @@ f.querySelectorAll('[required]').forEach(i=>{const bad=!i.value.trim();i.setAttr
 if(!ok){f.querySelector('[aria-invalid=true]').focus();return}
 const d=new FormData(f),v=k=>(String(d.get(k)||'').trim()||'No indicado');
 const fecha=v('fecha');
-const resumen=[
-'Hola, Kike Potter. Me gustaría consultar disponibilidad para mi evento.',
-'',
-'Nombre: '+v('nombre'),
-'Contacto: '+v('contacto'),
-'Tipo de evento: '+v('tipo'),
-'Fecha prevista: '+(fecha==='No indicado'?'No indicada':fecha),
-'Localidad: '+v('localidad'),
-'Número aproximado de asistentes o niños: '+v('num'),
-'Mensaje adicional: '+v('mensaje')
-].join('\\n');
+const fechaBonita=fecha==='No indicado'?'por confirmar':fecha.split('-').reverse().join('/');
+const resumen='Hola Kike Potter, soy '+v('nombre')+'. Me gustaría consultar precio y disponibilidad para mi evento: '+v('tipo')+' previsto para el día '+fechaBonita+'. Será en '+v('localidad')+' y el número aproximado de asistentes/niños es de '+v('num')+'.';
 msg.style.display='block';
 msg.textContent='Abriendo WhatsApp con los datos de tu consulta…';
 window.location.href='https://wa.me/34637464787?text='+encodeURIComponent(resumen);
