@@ -134,7 +134,7 @@ footer{background:var(--night);color:#cdd6f0;padding:36px 0;font-size:.9rem;text
 <div class="gal"><div class="ph a"><span><b>Foto</b>Vertical</span></div><div class="ph"><span><b>Foto</b>Público</span></div><div class="ph"><span><b>Foto</b>Detalle</span></div><div class="ph b"><span><b>Vídeo</b>Fragmento de una actuación</span></div><div class="ph"><span><b>Foto</b>Cartas</span></div><div class="ph"><span><b>Foto</b>Risas</span></div></div></div></section>
 
 <section id="contacto" class="blue"><div class="wrap ct"><div><div class="eyebrow">Contacto</div><h2>Reserva la sorpresa.</h2><p>Cuéntanos tu evento y consulta si Kike Potter está libre.</p>
-<p><a href="https://wa.me/34637464787" target="_blank" rel="noopener">WhatsApp: 637 464 787</a><br>Teléfono: <a href="tel:+34637464787">637 464 787</a></p></div>
+<p><a class="btn" href="tel:+34659948014">Llamar a Kike Potter</a><br><a href="mailto:kikepotter@gmail.com">kikepotter@gmail.com</a></p></div>
 <form id="f" novalidate><div class="fg">
 <label>Nombre<input name="nombre" required autocomplete="name"><span class="err"></span></label>
 <label>Tipo de evento<select name="tipo" id="tipo" required><option value="">Elige…</option><option>Cumpleaños infantil</option><option>Comunión</option><option>Evento privado</option><option>Otra celebración</option></select><span class="err"></span></label>
@@ -162,7 +162,7 @@ const fechaBonita=fecha==='No indicado'?'por confirmar':fecha.split('-').reverse
 const resumen='Hola Kike Potter, soy '+v('nombre')+'. Me gustaría consultar precio y disponibilidad para mi evento: '+v('tipo')+' previsto para el día '+fechaBonita+'. Será en '+v('localidad')+' y el número aproximado de asistentes/niños es de '+v('num')+'.';
 msg.style.display='block';
 msg.textContent='Abriendo WhatsApp con los datos de tu consulta…';
-window.location.href='https://wa.me/34637464787?text='+encodeURIComponent(resumen);
+window.location.href='https://wa.me/34659948014?text='+encodeURIComponent(resumen);
 }
 const rab=document.querySelector('.rab'),rb=rab.firstElementChild,pe=rb.querySelector('.rpe'),ph=rb.querySelector('.rph'),pf=rb.querySelector('.rpf'),trk=document.querySelector('.trk'),rm=matchMedia('(prefers-reduced-motion:reduce)');
 let sm=scrollY,pv=sm,acc=0,dir=1,last=0,run=0;const HOP=170,TAU=Math.PI*2;
