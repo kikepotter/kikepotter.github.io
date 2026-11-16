@@ -35,7 +35,13 @@ nav ul.open{display:flex;flex-direction:column;position:absolute;top:calc(64px +
 .hero .wrap{display:grid;gap:40px;align-items:center}@media(min-width:900px){.hero .wrap{grid-template-columns:1.1fr .9fr}}
 .hero h1{font-size:clamp(2.4rem,7vw,4.6rem)}.hero h1 em{font-style:normal;color:var(--gold)}
 .hero .logo{width:min(300px,70%);margin-bottom:26px}.hero p{max-width:34em;font-size:1.15rem}.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+
 .stage{position:relative;aspect-ratio:4/5;max-width:420px;margin:auto;width:100%}
+.rabbit-peek{position:absolute;z-index:1;top:-91px;right:13%;width:128px;height:auto;transform:translateY(96px);animation:rabbit-peek 13s ease-in-out infinite;pointer-events:none;filter:drop-shadow(0 5px 3px rgba(12,25,55,.18))}
+.rabbit-peek svg{display:block;width:100%;height:auto;overflow:visible}
+@keyframes rabbit-peek{0%,68%,100%{transform:translateY(96px)}73%,84%{transform:translateY(0)}88%{transform:translateY(8px)}93%{transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.rabbit-peek{animation:none;transform:translateY(0)}}
+
 .ph{position:relative;border-radius:18px;background:repeating-linear-gradient(135deg,rgba(255,255,255,.08) 0 14px,rgba(255,255,255,.14) 14px 28px),#2a5bb8;display:grid;place-items:center;text-align:center;padding:14px;font-size:.82rem;color:#e8eefc;border:1.5px dashed rgba(255,255,255,.55);overflow:hidden}
 .ph b{display:block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
 .ivory .ph,.sky .ph{background:repeating-linear-gradient(135deg,rgba(31,74,155,.08) 0 14px,rgba(31,74,155,.15) 14px 28px),#dfe6f7;color:var(--ink);border-color:rgba(31,74,155,.5)}
@@ -82,7 +88,22 @@ footer{background:var(--night);color:#cdd6f0;padding:36px 0;font-size:.9rem;text
 <h1>Magia para que sus ojos se abran <em>como platos</em>.</h1>
 <p>Kike Potter es un mago de Málaga que lleva la ilusión a cumpleaños, comuniones y celebraciones familiares. Sorpresas de cerca, risas de cerca y recuerdos para toda la familia.</p>
 <div class="cta"><a class="btn" href="#contacto">Consultar disponibilidad</a><a class="btn ghost" href="#historia">Descubre su historia</a></div></div>
-<div class="stage" aria-hidden="false"><div class="ph" role="img" aria-label="Espacio reservado para la fotografía principal de Kike Potter"><span><b>Foto provisional</b>Retrato o fotografía de actuación de Kike Potter</span></div><div class="card"><svg class="sp" style="width:44%;height:auto;color:var(--blue)"><use href="#s"/></svg></div></div></div></section>
+<div class="stage" aria-hidden="false"><div class="ph" role="img" aria-label="Espacio reservado para la fotografía principal de Kike Potter"><span><b>Foto provisional</b>Retrato o fotografía de actuación de Kike Potter</span></div><div class="rabbit-peek" aria-hidden="true"><svg viewBox="0 0 150 125" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="54" cy="43" rx="17" ry="39" transform="rotate(-13 54 43)" fill="#fff" stroke="#d9e1ef" stroke-width="2"/>
+<ellipse cx="97" cy="42" rx="17" ry="39" transform="rotate(13 97 42)" fill="#fff" stroke="#d9e1ef" stroke-width="2"/>
+<ellipse cx="55" cy="43" rx="8" ry="28" transform="rotate(-13 55 43)" fill="#f4a8b9"/>
+<ellipse cx="96" cy="42" rx="8" ry="28" transform="rotate(13 96 42)" fill="#f4a8b9"/>
+<ellipse cx="75" cy="83" rx="53" ry="43" fill="#fff" stroke="#d9e1ef" stroke-width="2"/>
+<ellipse cx="52" cy="85" rx="6" ry="8" fill="#f4a8b9" opacity=".65"/>
+<ellipse cx="98" cy="85" rx="6" ry="8" fill="#f4a8b9" opacity=".65"/>
+<ellipse cx="59" cy="72" rx="4.5" ry="6" fill="#26334d"/>
+<ellipse cx="91" cy="72" rx="4.5" ry="6" fill="#26334d"/>
+<circle cx="60" cy="70" r="1.5" fill="#fff"/><circle cx="92" cy="70" r="1.5" fill="#fff"/>
+<path d="M70 82 Q75 76 80 82 Q75 89 70 82" fill="#ef91a7"/>
+<path d="M75 88 Q70 95 65 91 M75 88 Q80 95 85 91" fill="none" stroke="#59647a" stroke-width="2" stroke-linecap="round"/>
+<ellipse cx="45" cy="119" rx="16" ry="8" fill="#fff" stroke="#d9e1ef" stroke-width="1.5"/>
+<ellipse cx="105" cy="119" rx="16" ry="8" fill="#fff" stroke="#d9e1ef" stroke-width="1.5"/>
+</svg></div><div class="card"><svg class="sp" style="width:44%;height:auto;color:var(--blue)"><use href="#s"/></svg></div></div></div></section>
 
 <section id="presentacion" class="ivory"><div class="wrap two"><div class="rv"><div class="eyebrow">Presentación</div><h2>Un mago de Málaga, pensado para las familias.</h2>
 <p>Kike Potter hace espectáculos de magia para público infantil y sus familias en cumpleaños, comuniones y otros eventos privados. Para ti, que organizas: un profesional cercano al que es fácil consultar. Para ellos: un rato en el que todo puede pasar.</p>
