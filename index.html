@@ -77,8 +77,8 @@ footer{background:var(--night);color:#cdd6f0;padding:36px 0;font-size:.9rem;text
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
 
 /* Estela mágica del cursor */
-.magic-spark{position:fixed;left:0;top:0;z-index:9999;pointer-events:none;color:#d6ad55;font-family:Georgia,serif;line-height:1;text-shadow:0 0 7px rgba(214,173,85,.45);will-change:transform,opacity;animation:magic-spark-fade .85s ease-out forwards}
-@keyframes magic-spark-fade{0%{opacity:0;transform:translate(-50%,-50%) scale(.35) rotate(0deg)}18%{opacity:.8}100%{opacity:0;transform:translate(calc(-50% + var(--drift)),calc(-50% - 19px)) scale(.08) rotate(65deg)}}
+.magic-spark{position:fixed;left:0;top:0;z-index:9999;pointer-events:none;color:#f2c96d;font-family:Georgia,serif;line-height:1;text-shadow:0 0 5px rgba(255,220,145,.95),0 0 13px rgba(214,173,85,.8);will-change:transform,opacity;animation:magic-spark-fade 1.15s ease-out forwards}
+@keyframes magic-spark-fade{0%{opacity:0;transform:translate(-50%,-50%) scale(.45) rotate(0deg)}12%{opacity:1;transform:translate(-50%,-50%) scale(1.15) rotate(12deg)}100%{opacity:0;transform:translate(calc(-50% + var(--drift)),calc(-50% - 30px)) scale(.18) rotate(85deg)}}
 @media(prefers-reduced-motion:reduce){.magic-spark{display:none!important}}
 </style></head><body>
 <svg width="0" height="0" style="position:absolute"><symbol id="s" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.8 6 3.2 9.2 12 12-8.8 2.8-11.2 6-12 12-.8-6-3.2-9.2-12-12C8.8 9.2 11.2 6 12 0z"/></symbol></svg>
@@ -188,17 +188,17 @@ addEventListener('scroll',go,{passive:true});addEventListener('resize',go);fr(pe
   if(e.pointerType!=='mouse')return;
   x=e.clientX;y=e.clientY;
   const now=performance.now(),dx=x-lastX,dy=y-lastY;
-  if(Math.hypot(dx,dy)<17||now-lastAt<24)return;
+  if(Math.hypot(dx,dy)<9||now-lastAt<15)return;
   lastX=x;lastY=y;lastAt=now;
   const s=document.createElement('span');
   s.className='magic-spark';
   s.textContent=glyphs[Math.floor(Math.random()*glyphs.length)];
   s.style.left=x+'px';s.style.top=y+'px';
-  s.style.fontSize=(9+Math.random()*7)+'px';
-  s.style.setProperty('--drift',((Math.random()-.5)*24)+'px');
+  s.style.fontSize=(14+Math.random()*10)+'px';
+  s.style.setProperty('--drift',((Math.random()-.5)*38)+'px');
   document.body.appendChild(s);
   s.addEventListener('animationend',()=>s.remove(),{once:true});
-  if(document.querySelectorAll('.magic-spark').length>28){
+  if(document.querySelectorAll('.magic-spark').length>48){
    document.querySelector('.magic-spark')?.remove();
   }
  },{passive:true});
